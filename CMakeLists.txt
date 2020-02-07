@@ -4,3 +4,4 @@ project(GPrep)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(GPrep LicenseKeyFormatting.cpp)
+add_executable(FruitIntoBaskets FruitIntoBaskets.cpp)
