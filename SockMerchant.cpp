@@ -13,23 +13,20 @@ int sockMerchant(int n, vector<int> ar) {
 
     for (const int &i : ar) {
         if (pairs.find(i) != pairs.end())
-            ar[i]++;
+            pairs[i]++;
         else
             pairs.insert({i, 1});
     }
 
     int numPairs = 0;
-    for (const auto &i : pairs) {
-        cout << "Current pair: {" << i.first << ", " << i.second << "}" << endl;
+    for (const auto &i : pairs)
         numPairs += floor(i.second / 2);
-    }
 
-    cout << "Done";
 
     return numPairs;
 
 }
 
 int main() {
-    cout << "Total Pairs: " << sockMerchant(9, {10, 20, 20, 10, 10, 30, 50, 10, 20}) << endl;
+    cout << sockMerchant(9, {10, 20, 20, 10, 10, 30, 50, 10, 20}) << endl;
 }
