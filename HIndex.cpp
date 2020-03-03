@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 #include <numeric>
-#include <ranges>
 
 using namespace std;
 
@@ -19,7 +18,7 @@ int calculateHScore(const vector<int> &citations) {
             updateTracker(tracker, c);
         } else {
             updateTracker(tracker, c);
-            tracker.insert({c, accumulate(tracker.begin(), tracker.end(), c,
+            tracker.insert({c, accumulate(tracker.begin(), tracker.end(), 1,
                                           [&c](int value, const map<int, int>::value_type &p) {
                                               return (p.first > c) ? value + p.second : value;
                                           })});
