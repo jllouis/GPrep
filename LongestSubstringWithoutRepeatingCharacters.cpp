@@ -29,12 +29,13 @@ using namespace std;
 class Solution {
 public:
     static int lengthOfLongestSubstring(string s) {
+        int longestUnique = 0;
+        int lPointer = 0, rPointer = 1;
+        unordered_set<char> letters;
+        bool unique = true;
 
-        unordered_set<int> bucket;
-
-        int startIndex = 0;
-        for (int i = 0; i < s.length(); ++i) {
-
+        while (lPointer < s.length()) {
+            for (int i = lPointer, k = rPointer; i < k;)
         }
 
     }
