@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <deque>
-#include <set>
+//#include <deque>
 
 using namespace std;
 
@@ -9,19 +8,16 @@ class Node {
 public:
     string name;
     vector<Node *> children;
-    bool visited = false;
 
     Node(string str) { name = str; }
 
     vector<string> depthFirstSearch(vector<string> *array) {
-        deque<Node *> toVisit;
+        array->push_back(this->name);
+
         for (auto c : children)
-            toVisit.push_front(c);
+            c->depthFirstSearch(array);
 
-        for (auto v : toVisit)
-            array->push_back(v->name);
-
-        return {};
+        return *array;
     }
 
     Node *addChild(string name) {
